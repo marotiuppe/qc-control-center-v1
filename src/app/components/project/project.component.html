@@ -1,0 +1,52 @@
+<div class="grid-container">
+    <div class="d-flex mt-2">
+        <h1 class="mat-h1">Projects</h1>
+        <span class="spacer"></span>
+        <button class="float-right mt-2" routerLink="/createProject">+ Create Project</button>
+    </div>
+    
+    <section class="mt-2">
+        <div class="table-header">
+            <form [formGroup]="tableForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter()" placeholder="Filter" formControlName="filterValue">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="table-container mat-elevation-z8">
+            <mat-table [dataSource]="dataSource" matSort #sort="matSort">
+
+                <ng-container matColumnDef="name" sticky>
+                    <mat-header-cell mat-sort-header *matHeaderCellDef class="table-column-100"> Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="table-column-100" title="{{element.name}}"> {{element.name}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="key" sticky>
+                    <mat-header-cell mat-sort-header *matHeaderCellDef class="table-column-100"> Key </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="table-column-100"  title="{{element.key}}"> {{element.key}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="type" sticky>
+                    <mat-header-cell mat-sort-header *matHeaderCellDef class="table-column-100"> Type </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="table-column-100"  title="{{element.type}}"> {{element.type}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="lead">
+                    <mat-header-cell mat-sort-header *matHeaderCellDef class="table-column-100"> Lead </mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="table-column-100"  title="{{element.lead}}"> {{element.lead}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns sticky:true"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <div>
+                <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15, 20]"
+                    [showFirstLastButtons]="true">
+                </mat-paginator>
+            </div>
+
+        </div>
+    </section>
+    <!-- end table container -->
+</div>

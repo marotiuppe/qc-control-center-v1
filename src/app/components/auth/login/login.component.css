@@ -1,0 +1,13 @@
+.login-container {
+    justify-content: center;
+    margin: 10%;
+}
+
+mat-form-field {
+    justify-content: center; 
+    width: 100%;
+}
+.mdc-card {
+    width: 100%;
+    background: #b468d5;
+}

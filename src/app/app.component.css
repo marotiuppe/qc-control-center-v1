@@ -1,0 +1,54 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Set container height to 100% of viewport height */
+}
+.mat-sidenav-content {
+    height: calc(100% - 64px);
+    overflow: auto;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 5px 0 5px !important;
+    height: 50px !important
+}
+
+.mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    padding: 0px 15px;
+}
+
+.is-mobile .toolbar {
+    position: fixed;
+    z-index: 2;
+}
+
+
+.is-mobile .sidenav-container {
+    flex: 1 0 auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    flex: 0 0 auto; /* Make the toolbar not grow or shrink, keep its height */
+}
+
+.mat-sidenav-container {
+    flex: 1; /* Allow the sidenav container to grow and take the remaining space */
+}
+
+.mdc-list-item {
+    padding-left: 20px;
+    padding-right: 16px;
+}
+
+.mat-mdc-menu-trigger{
+    margin-right: 5px;
+}

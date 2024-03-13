@@ -1,0 +1,57 @@
+<div class="grid-container">
+    <h1 class="mat-h1">Dashboard</h1>
+    <mat-grid-list *ngIf="cardLayout | async as layout" [cols]="layout.columns" rowHeight="200px">
+      <!-- Mini Cards -->
+      <mat-grid-tile [colspan]="layout.miniCard.cols || 1" [rowspan]="layout.miniCard.rows || 1">
+        <app-card title="Mini Cards">
+          Mini Cards Content Here
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.miniCard.cols || 1" [rowspan]="layout.miniCard.rows || 1">
+        <app-card title="Mini Cards">
+          Mini Cards Content Here
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.miniCard.cols || 1" [rowspan]="layout.miniCard.rows || 1">
+        <app-card title="Mini Cards">
+          Mini Cards Content Here
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.miniCard.cols || 1" [rowspan]="layout.miniCard.rows || 1">
+        <app-card title="Mini Cards">
+          Mini Cards Content Here
+        </app-card>
+      </mat-grid-tile>
+      <!-- Charts -->
+      <mat-grid-tile [colspan]="layout.chart.cols || 1" [rowspan]="layout.chart.rows || 1">
+        <app-card>
+          <!-- <app-annual-sales-chart [chartTitle]="'Developer Work Week'" [data]="data" [chartSubTitle]="'Median hours/week'"></app-annual-sales-chart> -->
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.chart.cols || 1" [rowspan]="layout.chart.rows || 1">
+        <app-card>
+          <!-- <app-product-sales-chart [chartTitle]="'Product Sales'"></app-product-sales-chart> -->
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.chart.cols || 1" [rowspan]="layout.chart.rows || 1">
+        <app-card>
+          <!-- <app-sales-traffic-chart [chartTitle]="'Sales by Traffic Source'"></app-sales-traffic-chart> -->
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="layout.chart.cols || 1" [rowspan]="layout.chart.rows || 1">
+        <app-card>
+          <!-- <app-store-sessions-chart [chartTitle]="'Annual Expenses'"></app-store-sessions-chart> -->
+        </app-card>
+      </mat-grid-tile>
+      <!-- Table -->
+      <mat-grid-tile [colspan]="layout.table.cols || 1" [rowspan]="layout.table.rows || 1">
+        <app-card title="Table">
+          <app-table [displayedColumns]="displayedColumns" [dataSource]="dataSource" [tableTitle]="tableTitle"></app-table>
+        </app-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+    
+    
+   </div>
+  

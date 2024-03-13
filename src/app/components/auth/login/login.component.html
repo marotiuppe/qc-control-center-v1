@@ -1,0 +1,48 @@
+
+<div class="login-container d-flex primary">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Welcome To Angular Learning Please Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <form [formGroup]="loginForm">
+            <div class="mt-2">
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="example@gmail.com" formControlName="email">
+                  <mat-icon title="example@gmail.com" matSuffix>info</mat-icon>
+                  <mat-error
+                    *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+                    Email is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="mt-2">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" placeholder="Password@123" formControlName="password">
+                  <mat-icon title="Password@123" matSuffix>info</mat-icon>
+                  <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+                    Password length must be greater than or equal to 8 and must contain one uppercase ,lowercase , numeric and special characters
+                  </mat-error>
+                  <mat-error
+                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+                    Password is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <!-- <button class="ms-2 me-2" [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign In</button> -->
+        <button class="me-2" [disabled]="!loginForm.valid" mat-raised-button (click)="login()" color="primary">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

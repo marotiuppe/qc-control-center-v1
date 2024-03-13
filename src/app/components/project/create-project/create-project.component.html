@@ -1,0 +1,27 @@
+<div class="grid-container">
+    <div class="d-flex mt-2">
+        <h1 class="mat-h1">Projects</h1>
+        <span class="spacer"></span>
+        <button class="float-right mt-2" routerLink="/createProject">+ Create Project</button>
+    </div>
+    
+    <section class="mt-2">
+        <div class="table-header">
+            <form [formGroup]="createProjectForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Key</mat-label>
+                    <input matInput placeholder="key" formControlName="key">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Key</mat-label>
+                    <input matInput placeholder="key" formControlName="key">
+                </mat-form-field>
+            </form>
+        </div>
+    </section>
+    <!-- end table container -->
+</div>
