@@ -2,13 +2,14 @@
     <div class="d-flex mt-2">
         <h1 class="mat-h1">Projects</h1>
         <span class="spacer"></span>
-        <button class="float-right mt-2" routerLink="/createProject">+ Create Project</button>
+        <!-- <button class="float-right mt-2" routerLink="/createProject">+ Create Project</button> -->
+        <button mat-button class="float-right bg-info text-white" routerLink="/createProject">+ Create Project</button>
     </div>
     
     <section class="mt-2">
         <div class="table-header">
             <form [formGroup]="tableForm">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="col-sm-12">
                     <mat-label>Filter</mat-label>
                     <input matInput (keyup)="applyFilter()" placeholder="Filter" formControlName="filterValue">
                 </mat-form-field>

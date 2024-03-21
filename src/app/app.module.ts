@@ -25,6 +25,7 @@ import { RoleComponent } from './components/role/role.component';
 import { CreateProjectComponent } from './components/project/create-project/create-project.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CreateCategoriesComponent } from './components/categories/create-categories/create-categories.component';
+import { CustomAlertComponent } from './components/common-component/custom-alert/custom-alert.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CreateCategoriesComponent } from './components/categories/create-catego
     RoleComponent,
     CreateProjectComponent,
     CategoriesComponent,
-    CreateCategoriesComponent
+    CreateCategoriesComponent,
+    CustomAlertComponent
   ],
   imports: [
     BrowserModule,

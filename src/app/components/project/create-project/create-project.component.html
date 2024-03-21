@@ -1,26 +1,40 @@
 <div class="grid-container">
-    <div class="d-flex mt-2">
-        <h1 class="mat-h1">Projects</h1>
-        <span class="spacer"></span>
-        <button class="float-right mt-2" routerLink="/createProject">+ Create Project</button>
+    <div class="d-flex mt-2 mb-4 col-sm">
+        <h1 class="mat-h1"> Create Projects</h1>
     </div>
     
-    <section class="mt-2">
+    <section>
         <div class="table-header">
             <form [formGroup]="createProjectForm">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" floatLabel="always" class="col-sm">
                     <mat-label>Name</mat-label>
-                    <input matInput placeholder="Name" formControlName="name">
+                    <input matInput placeholder="Enter Name" formControlName="name">
                 </mat-form-field>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" floatLabel="always" class="col-sm">
                     <mat-label>Key</mat-label>
-                    <input matInput placeholder="key" formControlName="key">
+                    <input matInput placeholder="Enter Key" formControlName="key">
                 </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Key</mat-label>
-                    <input matInput placeholder="key" formControlName="key">
+                <mat-form-field appearance="outline" floatLabel="always" class="col-sm">
+                    <mat-label>Category</mat-label>
+                    <mat-select matNativeControl required formControlName="category">
+                        <mat-option *ngFor="let lead of leadList" [value]="lead.id">{{lead.name}} ({{lead.role}})</mat-option>
+                     </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" floatLabel="always" class="col-sm">
+                    <mat-label>Lead</mat-label>
+                    <mat-select matNativeControl required formControlName="Lead">
+                       <mat-option *ngFor="let lead of leadList" [value]="lead.id">{{lead.name}} ({{lead.role}})</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" floatLabel="always" class="col-sm">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="Enter Description" formControlName="description"></textarea>
                 </mat-form-field>
             </form>
+        </div>
+        <div  class="col align-self-end">
+            <button mat-button class="bg-info text-white me-2 col-sm-1">Save</button>
+            <button mat-button class="bg-danger text-white col-sm-1" routerLink="/project">Cancel</button>
         </div>
     </section>
     <!-- end table container -->

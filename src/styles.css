@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body {
     height: 100%;
@@ -10,10 +11,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html {
+/* html {
     --mat-toolbar-container-background-color: #424242;
     --mat-toolbar-container-text-color: white;
-}
+} */
 
 .mat-h1 {
     margin: 5px 0px 0px 0px !important;

@@ -1,9 +1,24 @@
+<app-custom-alert [message]="message" [showAlert]="show" [type]="type"></app-custom-alert>
 <app-login *ngIf="!isLoggedIn" (childEvent)="onChildEvent($event)"></app-login>
 <div class="app-container" *ngIf="isLoggedIn" [class.is-mobile]="mobileQuery.matches">
-  <mat-toolbar>
+  <mat-toolbar [ngClass]="themeColor">
     <button mat-icon-button (click)="sidenav.toggle()"><mat-icon class="menu">menu</mat-icon></button>
     <a> Welcome {{displayUser}} </a>
     <span class="spacer"></span>
+    
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu"><mat-icon>invert_colors</mat-icon></button>
+    <mat-menu #themeMenu="matMenu" xPosition="before">
+      <mat-button-toggle-group name="colorChanger" class="" aria-label="Color Changer" [(ngModel)]="themeColor">
+        <mat-button-toggle value="bg-primary text-white" class="bg-primary text-white"><span class="color-indicator" color="primary"></span>primary</mat-button-toggle>
+        <mat-button-toggle value="bg-secondary text-white" class="bg-secondary text-white"><span class="color-indicator" color="secondary"></span>secondary</mat-button-toggle>
+        <mat-button-toggle value="bg-info text-white" class="bg-info text-white"><span class="color-indicator" color="info"></span>info</mat-button-toggle>
+        <mat-button-toggle value="" class=""><span class="color-indicator" color=""></span>none</mat-button-toggle>
+        <mat-button-toggle value="bg-success text-white" class="bg-success text-white"><span class="color-indicator" color="success"></span>success</mat-button-toggle>
+        <mat-button-toggle value="bg-danger text-white" class="bg-danger text-white"><span class="color-indicator" color="danger"></span>danger</mat-button-toggle>
+        <mat-button-toggle value="bg-warning text-white" class="bg-warning text-white"><span class="color-indicator" color="warning"></span>warning</mat-button-toggle>
+        <mat-button-toggle value="bg-dark text-white" class="bg-dark text-white"><span class="color-indicator" color="dark"></span>dark</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>account_circle</mat-icon></button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
       <button mat-menu-item>
@@ -18,13 +33,13 @@
     </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container class="app-container">
-    <mat-sidenav 
-      #sidenav mode="side" 
+    <mat-sidenav [ngClass]="themeColor"
+      #sidenav mode="side"
       opened 
       [fixedInViewport]="options.value.fixed" 
       [fixedTopGap]="options.value.top"
       [fixedBottomGap]="options.value.bottom">
-      <mat-nav-list>
+      <mat-nav-list class="">
         <a mat-list-item routerLink="{{nav.path}}" *ngFor="let nav of navItems">{{nav.name}}</a>
       </mat-nav-list>
     </mat-sidenav>
@@ -34,4 +49,5 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
 

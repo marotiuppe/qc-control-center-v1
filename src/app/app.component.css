@@ -52,3 +52,6 @@
 .mat-mdc-menu-trigger{
     margin-right: 5px;
 }
+mat-nav-list a span span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+    color: var(--mdc-text-button-label-text-color) !important;
+}
