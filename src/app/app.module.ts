@@ -26,6 +26,7 @@ import { CreateProjectComponent } from './components/project/create-project/crea
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CreateCategoriesComponent } from './components/categories/create-categories/create-categories.component';
 import { CustomAlertComponent } from './components/common-component/custom-alert/custom-alert.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CustomAlertComponent } from './components/common-component/custom-alert
     NgFor,
     FormsModule,
     ReactiveFormsModule,
+    CanvasJSAngularChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }

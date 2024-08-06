@@ -20,4 +20,22 @@
     text-align: center;
     background-color: white !important;
     color: black !important;
+} 
+
+.count-box {
+    display: flex;
 }
+
+.count-box h2 {  
+    font-size: 1em;  
+    margin: 0;  
+    color: #333;  
+}  
+
+.count {  
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #008cba;
+    margin: 6px; 
+    width: 2em;
+}  

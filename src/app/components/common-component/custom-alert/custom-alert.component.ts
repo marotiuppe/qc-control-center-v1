@@ -13,7 +13,29 @@ export class CustomAlertComponent {
   close() {
     this.showAlert = false;
   }
-  show() {
+  show(type :string,message:string,showAlert:boolean) {
+    this.type=type;
+    this.message=message;
+    this.showAlert = showAlert;
+  }
+  success(message:string) {
+    this.type="success";
+    this.message=message;
+    this.showAlert = true;
+  }
+  danger(message:string) {
+    this.type="danger";
+    this.message=message;
+    this.showAlert = true;
+  }
+  info(message:string) {
+    this.type="info";
+    this.message=message;
+    this.showAlert = true;
+  }
+  warning(message:string) {
+    this.type="warning";
+    this.message=message;
     this.showAlert = true;
   }
 }

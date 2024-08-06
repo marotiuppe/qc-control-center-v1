@@ -46,7 +46,7 @@ export class AppComponent implements OnDestroy {
   }
 
   logout() {
-    this.message = "Logout Start";
+    this.message = "Logout Success";
     this.show=true;
     this.type="success";
     this.isLoggedIn=false;
